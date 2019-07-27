@@ -1,4 +1,13 @@
+此库克隆于[PSENet](https://github.com/whai362/PSENet)<br><br>
+分割任务常见的问题是，图像中目标区域面积很小，即正例少负样本多，正负样本极其不均衡。此类问题在医疗领域也大量存在，并有大量损失函数被发明:[从loss处理图像分割中类别极度不均衡的状况---keras](https://blog.csdn.net/m0_37477175/article/details/83004746)<br><br>
+PSENet中使用dice loss作为损失函数。<br>
+dice收集的一些讲解(目前没找到靠谱的)：[dice就是真实结果与预测结果的相交面积/全面积](https://blog.csdn.net/legend_hua/article/details/80610790),与IOU交并比极其相似，其公式为[2|AnB|(|A|+|B|)](https://zhuanlan.zhihu.com/p/36664544)<br>
+[dice loss(csdn)](https://blog.csdn.net/qq_34106574/article/details/89916947)的总结中也发现了dice可能效果并不是很好，可以用bce代替
+[dice vs bce](https://stats.stackexchange.com/questions/321460/dice-coefficient-loss-function-vs-cross-entropy)
+
+
 # Shape Robust Text Detection with Progressive Scale Expansion Network
+
 
 ## Requirements
 * Python 2.7
