@@ -124,8 +124,8 @@ def train(train_loader, model, criterion, optimizer, epoch):
         selected_masks = ohem_batch(texts, gt_texts, training_masks)
         selected_masks = Variable(selected_masks.cuda())
 
-        loss_text = criterion(texts, gt_texts, selected_masks)
-        
+        loss_text = criterion(texts, gt_texts, selected_masks)#dice loss
+        #loss_text = (F.binary_cross_entropy_with_logits(texts, gt_texts, reduce=False) * selected_masks).mean()#bce loss
         loss_kernels = []
         mask0 = torch.sigmoid(texts).data.cpu().numpy()
         mask1 = training_masks.data.cpu().numpy()
