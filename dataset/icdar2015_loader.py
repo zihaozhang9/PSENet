@@ -58,7 +58,7 @@ def random_rotate(imgs):
         img = imgs[i]
         w, h = img.shape[:2]
         rotation_matrix = cv2.getRotationMatrix2D((h / 2, w / 2), angle, 1)
-        img_rotation = cv2.warpAffine(img, rotation_matrix, (h, w))
+        img_rotation = cv2.warpAffine(img, rotation_matrix, (h, w),flags=cv2.INTER_NEAREST)
         imgs[i] = img_rotation
     return imgs
 
