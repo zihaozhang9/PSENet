@@ -32,7 +32,7 @@ namespace pse_adaptor {
     void growing_text_line(vector<Mat> &kernals, vector<vector<int>> &text_line, float min_area) {
         
         Mat label_mat;
-        int label_num = connectedComponents(kernals[kernals.size() - 1], label_mat, 4);
+        int label_num = connectedComponents(kernals[kernals.size() - 1], label_mat, 4);//https://www.cnblogs.com/jsxyhelu/p/7439655.html
 
         // cout << "label num: " << label_num << endl;
         
