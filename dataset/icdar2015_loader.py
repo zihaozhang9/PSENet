@@ -126,7 +126,7 @@ def shrink(bboxes, rate, max_shr=20):
         area = plg.Polygon(bbox).area()
         peri = perimeter(bbox)
 
-        pco = pyclipper.PyclipperOffset()
+        pco = pyclipper.PyclipperOffset() #https://pypi.org/project/pyclipper/
         pco.AddPath(bbox, pyclipper.JT_ROUND, pyclipper.ET_CLOSEDPOLYGON)
         offset = min((int)(area * (1 - rate) / (peri + 0.001) + 0.5), max_shr)
         
